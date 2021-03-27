@@ -5,9 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-  u = User.create(name: 'Juan', email: 'juan@example.com', password: '123123')
+Tweet.destroy_all
+User.destroy_all
 
-  50.times do |i| 
+u = User.create!(name: 'Juan', email: 'juan@example.com', password: '123123')
 
-    Tweet.create(id:u.id,name:'juan@example.com', email:'juan@example.com', title:'Mi Tweet')
-  end
+200.times do |i| 
+
+  Tweet.create!(user_id:u.id, title:'Mi Tweet', content: "Mi primer comentario")
+  puts "++++++++++++"
+end

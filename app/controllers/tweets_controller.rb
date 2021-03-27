@@ -1,14 +1,19 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[ show edit update destroy ]
 
+
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
+
+    @tweets = Tweet.order(:title).page params[:page]
   end
 
   # GET /tweets/1 or /tweets/1.json
   def show
+  
   end
+
 
   # GET /tweets/new
   def new
@@ -66,4 +71,6 @@ class TweetsController < ApplicationController
     def tweet_params
       params.require(:tweet).permit(:id, :title, :content)
     end
+
+
 end
