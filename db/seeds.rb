@@ -9,5 +9,5 @@
 
   50.times do |i| 
 
-    Tweet.create(id:u.id,name:'juan@example.com', email:, title:'Mi Tweet')
+    Tweet.create(id:u.id,name:'juan@example.com', email:'juan@example.com', title:'Mi Tweet')
   end
