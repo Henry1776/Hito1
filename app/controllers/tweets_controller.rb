@@ -11,11 +11,9 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1 or /tweets/1.json
   def show
-  
   end
 
-
-  # GET /tweets/new
+    # GET /tweets/new
   def new
     @tweet = Tweet.new
   end
@@ -69,7 +67,7 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:id, :title, :content)
+      params.require(:tweet).permit(:retweet_id, :content)
     end
 
 
