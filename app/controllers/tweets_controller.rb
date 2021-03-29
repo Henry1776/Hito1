@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[ show edit update destroy ]
-
+  before_action :authorize_user, except: %i[ index show new update  ]
 
   # GET /tweets or /tweets.json
   def index
@@ -63,6 +63,18 @@ class TweetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tweet
       @tweet = Tweet.find(params[:id])
+    end
+
+    def authorize_user
+
+      if user_signed_in?
+
+        #redirect_to new_user_session_path
+      
+       else
+          flash[:notice] = "You must be logged to modified Tweets"
+          redirect_to new_user_session_path      
+      end
     end
 
     # Only allow a list of trusted parameters through.
