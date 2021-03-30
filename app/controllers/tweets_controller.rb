@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[ show edit update destroy ]
-  before_action :authorize_user, except: %i[ index show new update  ]
+  before_action :authorize_user, except: %i[ index show new update ]
 
   # GET /tweets or /tweets.json
   def index
