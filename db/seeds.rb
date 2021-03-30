@@ -15,3 +15,4 @@ u = User.create!(name: 'Juan', email: 'juan@example.com', password: '123123')
   Tweet.create!(user_id:u.id, title:'Mi Tweet', content: "Mi primer comentario")
   puts "++++++++++++"
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

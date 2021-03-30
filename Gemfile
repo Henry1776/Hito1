@@ -60,3 +60,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #kaminari gem
 gem 'kaminari'
+
+#gem active admin
+gem 'activeadmin'
